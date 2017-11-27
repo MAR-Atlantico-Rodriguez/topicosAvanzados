@@ -46,6 +46,10 @@ include('frameClass.php');
 	   							+ $this->juego[$k+1]->puntajeTotalFrame() 
 	   							+ $this->juego[$k+2]->puntajeTotalFrame();	   				
 	   				array_push($plenos, $totalPleno);
+	   			}elseif ( $v->puntajeTotalFrame() == 10 and ($k >= 8 and $k < 9)) {
+	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame() 
+	   							+ $this->juego[$k+1]->puntajeTotalFrame();
+	   				array_push($plenos, $totalPleno);
 	   			}
 	   		}
 	   		return $plenos;
