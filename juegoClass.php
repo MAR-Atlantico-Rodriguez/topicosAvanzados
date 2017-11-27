@@ -51,8 +51,8 @@ include('frameClass.php');
 	   		return $plenos;
 	   	}
 
-	   	public function contabilizaPlenosJuego(){
-	   		$plenos = $this->contabilizaPlenosJuego();
+	   	public function contabilizarPlenosJuego(){
+	   		$plenos = $this->contabilizaVariosJuego();
 	   		$totalDelJuego = 0;
 	   		foreach ($plenos as $k => $v) {
 	   			$totalDelJuego = $totalDelJuego + $v;
