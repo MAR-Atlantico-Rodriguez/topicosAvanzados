@@ -83,11 +83,11 @@
             $this->juego->crearJuego(1,0);
             $this->juego->crearJuego(1,0);
             $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $result = $this->juego->contabilizaVariosPleno();
+            $result = $this->juego->contabilizaPlenosJuego();
             $this->assertEquals(12,$result[0]);
-            $this->assertEquals(12,$result[1]);
+            $this->assertEquals(21,$result[1]);
         }
     }
 ?>

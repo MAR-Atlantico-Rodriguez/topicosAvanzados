@@ -26,7 +26,7 @@ include('frameClass.php');
 	   		return $totalJuego;
 	   	}
 
-	   public function contabilizaPrimerPleno(){	   			
+	   	public function contabilizaPrimerPleno(){	   			
 	   		for ($i=0; $i <= count($this->juego); $i++) {
 	   			if($this->juego[$i]->puntajeTotalFrame() == 10){
 	   				$totalPleno = $this->juego[$i]->puntajeTotalFrame() 
@@ -35,9 +35,21 @@ include('frameClass.php');
 	   				return $totalPleno;
 	   			}
 	   		}	   		
-	   }
+	   	}
 
-
+	   	public function contabilizaPlenosJuego(){
+	   		$plenos = [];
+	   		$a = 0;
+	   		foreach ($this->juego as $k => $v) {
+	   			if($v->puntajeTotalFrame() == 10 and $k < 8){
+	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame() 
+	   							+ $this->juego[$k+1]->puntajeTotalFrame() 
+	   							+ $this->juego[$k+2]->puntajeTotalFrame();	   				
+	   				array_push($plenos, $totalPleno);
+	   			}
+	   		}
+	   		return $plenos;
+	   	}
 	 	
 	}
 ?>
