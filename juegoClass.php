@@ -1,16 +1,21 @@
 <?php
-use frameClass as frameClass;
+include('frameClass.php');
 	class JuegoClass{
 		public $juego = [];
-		public $frameClass;
 
-		function __construct() {
-	       $this->frameClass = new frameClass();
+		function __construct() {}
+
+	   	public function crearJuego($v1, $v2){
+	   		if(count($this->juego) < 10){
+	   			$frameClass = new frameClass();
+	   			$frameClass->cargarFrame($v1);
+	   			$frameClass->cargarFrame($v2);
+	   			$this->juego[] = $frameClass;
+	   			return true;
+	   		}else{
+	   			return 'ERROR, Mas de 10 juegos';
+	   		}
 	   	}
-
-	 	public function cargarFrame($posicionX, $posiciony, $intento) {
-	 		$this->frameClass->cargarFrame($posicionX, $posiciony, $intento);
-	 	}	 	
+	 	
 	}
-
 ?>

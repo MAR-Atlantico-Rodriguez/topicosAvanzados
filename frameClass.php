@@ -1,17 +1,13 @@
 <?php
 	class FrameClass{
-		public $FrameArray;
+		public $FrameArray = [];
 
-	 	public function cargarFrame($posicionX, $posicionY, $intento){
-	 		if(!is_array($this->FrameArray[$posicionX])){
-	 			if($intento <= 10){
-	 				$this->FrameArray[$posicionX][$posicionY] = $intento;
-	 				return TRUE;
-	 			}else{
-	 				return 'Error, Debe ser como maximo 10 puntos';
-	 			}
+	 	public function cargarFrame($intento){
+	 		if($intento <= 10){
+	 			array_push($this->FrameArray, $intento);
+	 			return true;
 	 		}else{
-	 			return 'ERROR';
+	 			return 'Error, Debe ser como maximo 10 puntos';
 	 		}
 	 	}
 
@@ -24,10 +20,8 @@
 
 	 	public function puntajeTotalFrame(){
 	 		$total = 0;
-	 		foreach ($this->FrameArray as $v) {
-	 			foreach ($v as $vv) {
-	 				$total = $total + $vv;
-	 			}
+	 		foreach ($this->FrameArray as $k => $v) {
+				$total = $total + $v;
 	 		}
 	 		return $total;
 	 	}
