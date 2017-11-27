@@ -26,7 +26,7 @@ include('frameClass.php');
 	   		return $totalJuego;
 	   	}
 
-	   public function contabilizaUnPleno(){	   			
+	   public function contabilizaPrimerPleno(){	   			
 	   		for ($i=0; $i <= count($this->juego); $i++) {
 	   			if($this->juego[$i]->puntajeTotalFrame() == 10){
 	   				$totalPleno = $this->juego[$i]->puntajeTotalFrame() 
@@ -34,9 +34,10 @@ include('frameClass.php');
 	   							+ $this->juego[$i+2]->puntajeTotalFrame();	   				
 	   				return $totalPleno;
 	   			}
-	   		}
-	   		
+	   		}	   		
 	   }
+
+
 	 	
 	}
 ?>
