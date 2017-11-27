@@ -26,14 +26,17 @@ include('frameClass.php');
 	   	}
 
 	   public function contabilizaUnPleno(){
-	   		$totalPleno = 0;
+	   		$arrayPleno = [];
 	   		for ($i=0; $i <= count($this->juego); $i++) {
+	   			$totalPleno = 0;
 	   			if($this->juego[$i]->puntajeTotalFrame() == 10){
-	   				return $this->juego[$i]->puntajeTotalFrame() 
+	   				$totalPleno = $this->juego[$i]->puntajeTotalFrame() 
 	   							+ $this->juego[$i+1]->puntajeTotalFrame() 
 	   							+ $this->juego[$i+2]->puntajeTotalFrame();
+	   				array_push($arrayPleno, $totalPleno);
 	   			}
 	   		}
+	   		return $arrayPleno;
 	   }
 	 	
 	}
