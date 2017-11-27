@@ -29,6 +29,16 @@
             $result = $this->frame->cargarFrame(0,0,10);
             $this->assertEquals('ERROR', $result);
         }
+
+        /*
+            Comprueba la cantidad de tiros que posee un Frame
+        */
         
+        public function testCantidadTiros(){
+            $a = $this->frame->cargarFrame(0,0,5);
+            $b = $this->frame->cargarFrame(0,1,5);
+            $result = $this->frame->cantidadTiros(0);
+            $this->assertEquals(2, $result);  
+        }   
     }
 ?>
