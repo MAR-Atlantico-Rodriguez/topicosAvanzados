@@ -39,6 +39,7 @@
             $this->juego->crearJuego(6,3);
             $this->juego->crearJuego(4,3);
             $this->juego->crearJuego(4,5);
+            $this->juego->crearJuego(4,5);
             $result = $this->juego->crearJuego(1,1);
 
             $this->assertEquals('ERROR, Mas de 10 juegos', $result);
@@ -101,6 +102,7 @@
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,10);
             $result = $this->juego->contabilizarPlenosJuego();
             $this->assertEquals(300,$result);
         }
@@ -117,7 +119,7 @@
             $this->juego->crearJuego(4,3);
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(4,10);
-            $result = $this->juego->contabilizarPlenosJuego();
+            $result = $this->juego->ejemploJuego();
             $this->assertEquals(128,$result);
         }
     }

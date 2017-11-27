@@ -7,7 +7,7 @@ include('frameClass.php');
 		function __construct() {}
 
 	   	public function crearJuego($v1, $v2){
-	   		if(count($this->juego) < 10){
+	   		if(count($this->juego) <= 10){
 	   			$frameClass = new frameClass();
 	   			$frameClass->cargarFrame($v1);
 	   			$frameClass->cargarFrame($v2);
@@ -16,6 +16,7 @@ include('frameClass.php');
 	   		}else{
 	   			return 'ERROR, Mas de 10 juegos';
 	   		}
+
 	   	}
 
 	   	public function contabilizarPuntajeJuego(){
@@ -40,6 +41,7 @@ include('frameClass.php');
 	   	public function contabilizaVariosJuego(){
 	   		$plenos = [];
 	   		$a = 0;
+
 	   		foreach ($this->juego as $k => $v) {
 	   			if($v->puntajeTotalFrame() == 10 and $k < 8){
 	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame() 
@@ -49,6 +51,9 @@ include('frameClass.php');
 	   			}elseif ( $v->puntajeTotalFrame() == 10 and ($k >= 8 and $k < 9)) {
 	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame() 
 	   							+ $this->juego[$k+1]->puntajeTotalFrame();
+	   				array_push($plenos, $totalPleno);
+	   			}else if (count($this->juego)==11) {
+	   				$totalPleno = $this->juego[10]->puntajeTotalFrame();
 	   				array_push($plenos, $totalPleno);
 	   			}
 	   		}
@@ -66,7 +71,6 @@ include('frameClass.php');
 
 	   	public function ejemploJuego(){
 	   		return 128;
-	   	}
-	 	
+	   	}	 	
 	}
 ?>
