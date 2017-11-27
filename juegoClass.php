@@ -1,7 +1,8 @@
 <?php
 include('frameClass.php');
 	class JuegoClass{
-		public $juego = [];		
+		public $juego = [];
+		public $totalPleno = 0;
 
 		function __construct() {}
 
@@ -25,18 +26,16 @@ include('frameClass.php');
 	   		return $totalJuego;
 	   	}
 
-	   public function contabilizaUnPleno(){
-	   		$arrayPleno = [];
+	   public function contabilizaUnPleno(){	   			
 	   		for ($i=0; $i <= count($this->juego); $i++) {
-	   			$totalPleno = 0;
 	   			if($this->juego[$i]->puntajeTotalFrame() == 10){
 	   				$totalPleno = $this->juego[$i]->puntajeTotalFrame() 
 	   							+ $this->juego[$i+1]->puntajeTotalFrame() 
-	   							+ $this->juego[$i+2]->puntajeTotalFrame();
-	   				array_push($arrayPleno, $totalPleno);
+	   							+ $this->juego[$i+2]->puntajeTotalFrame();	   				
+	   				return $totalPleno;
 	   			}
 	   		}
-	   		return $arrayPleno;
+	   		
 	   }
 	 	
 	}

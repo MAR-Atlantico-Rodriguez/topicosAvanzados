@@ -71,23 +71,9 @@
             $this->juego->crearJuego(1,0);
             $this->juego->crearJuego(1,0);
             $result = $this->juego->contabilizaUnPleno();            
-            $this->assertEquals(12,$result[0]);
+            $this->assertEquals(12,$result);
         }
 
-        public function testContabilizaUnPleno2(){
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(10,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(10,0);
-            $this->juego->crearJuego(1,0);
-            $this->juego->crearJuego(1,0);
-            $result = $this->juego->contabilizaUnPleno();
-            $this->assertEquals(12,$result[0]);
-            $this->assertEquals(12,$result[1]);
-        }
+
     }
 ?>
