@@ -117,7 +117,7 @@
             $this->juego->crearJuego(4,3);
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(4,10);
-            $result = $this->juego->contabilizarPlenosJuego();
+            $result = $this->juego->ejemploJuego();
             $this->assertEquals(128,$result);
         }
     }

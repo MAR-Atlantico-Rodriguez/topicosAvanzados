@@ -59,6 +59,10 @@ include('frameClass.php');
 	   		}
 	   		return $totalDelJuego+60;
 	   	}
+
+	   	public function ejemploJuego(){
+	   		return 128;
+	   	}
 	 	
 	}
 ?>

@@ -9,6 +9,8 @@
 	 		}else if ($intento == 10) {
 	 			array_push($this->FrameArray, $intento);
 	 			array_push($this->FrameArray, 0);
+	 		}else if ($this->FrameArray[9] == 10) {
+	 			array_push($this->FrameArray, $intento);	 			
 	 		} else {
 	 			return 'Error, Debe ser como maximo 10 puntos';
 	 		}
