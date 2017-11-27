@@ -58,5 +58,20 @@
             $result = $this->juego->contabilizarPuntajeJuego();
             $this->assertEquals(10,$result);
         }
+
+        public function testContabilizaUnPleno(){
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $result = $this->juego->contabilizaUnPleno();
+            $this->assertEquals(12,$result);
+        }
     }
 ?>

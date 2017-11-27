@@ -2,11 +2,14 @@
 	class FrameClass{
 		public $FrameArray = [];
 
-	 	public function cargarFrame($intento){
-	 		if($intento <= 10){
+	 	public function cargarFrame($intento){	 		
+	 		if($intento < 10){
 	 			array_push($this->FrameArray, $intento);
 	 			return true;
-	 		}else{
+	 		}else if ($intento == 10) {
+	 			array_push($this->FrameArray, $intento);
+	 			array_push($this->FrameArray, 0);
+	 		} else {
 	 			return 'Error, Debe ser como maximo 10 puntos';
 	 		}
 	 	}
