@@ -34,5 +34,12 @@
             $result = $this->frame->cargarFrame(0,0,11);
             $this->assertEquals('Error, Debe ser como maximo 10 puntos', $result);
         }
+
+        public function testTotalPuntaje(){
+            $this->frame->cargarFrame(0,0,5);
+            $this->frame->cargarFrame(0,1,5);
+            $total = $this->frame->puntajeTotalFrame();
+            $this->assertEquals(5,$total);
+        }
     }
 ?>

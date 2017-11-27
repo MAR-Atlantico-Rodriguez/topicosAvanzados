@@ -3,7 +3,7 @@
 		public $FrameArray;
 
 	 	public function cargarFrame($posicionX, $posicionY, $intento){
-	 		if(is_null($this->FrameArray[$posicionX][$posicionY])){
+	 		if(!is_array($this->FrameArray[$posicionX])){
 	 			if($intento <= 10){
 	 				$this->FrameArray[$posicionX][$posicionY] = $intento;
 	 				return TRUE;
@@ -20,6 +20,16 @@
 	 	*/
 	 	public function cantidadTiros($posicionX){
 	 		return count($this->FrameArray[$posicionX]);
+	 	}
+
+	 	public function puntajeTotalFrame(){
+	 		$total = 0;
+	 		foreach ($this->FrameArray as $v) {
+	 			foreach ($v as $vv) {
+	 				$total = $total + $vv;
+	 			}
+	 		}
+	 		return $total;
 	 	}
 	}
 ?>
