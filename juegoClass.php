@@ -1,8 +1,7 @@
 <?php
 include('frameClass.php');
 	class JuegoClass{
-		public $juego = [];
-		public $totalJuego = 0;
+		public $juego = [];		
 
 		function __construct() {}
 
@@ -19,8 +18,9 @@ include('frameClass.php');
 	   	}
 
 	   	public function contabilizarPuntajeJuego(){
+	   		$totalJuego = 0;
 	   		foreach ($this->juego as $k => $v) {
-	   			$totalJuego = $v->puntajeTotalFrame();
+	   			$totalJuego = $totalJuego + $v->puntajeTotalFrame();
 	   		}
 	   		return $totalJuego;
 	   	}
