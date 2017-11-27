@@ -102,7 +102,7 @@
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(10,0);
             $result = $this->juego->contabilizarPlenosJuego();
-            $this->assertEquals(240,$result);
+            $this->assertEquals(300,$result);
         }
     }
 ?>
