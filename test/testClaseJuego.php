@@ -85,9 +85,24 @@
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(10,0);
             $this->juego->crearJuego(1,0);
-            $result = $this->juego->contabilizaPlenosJuego();
+            $result = $this->juego->contabilizaVariosJuego();
             $this->assertEquals(12,$result[0]);
             $this->assertEquals(21,$result[1]);
+        }
+
+        public function testContabilizarPlenosJuego(){
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $result = $this->juego->contabilizarPlenosJuego();
+            $this->assertEquals(30,$result);
         }
     }
 ?>
