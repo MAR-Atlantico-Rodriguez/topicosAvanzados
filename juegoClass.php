@@ -61,7 +61,7 @@ include('frameClass.php');
 	   		foreach ($plenos as $k => $v) {
 	   			$totalDelJuego = $totalDelJuego + $v;
 	   		}
-	   		return $totalDelJuego+60;
+	   		return $totalDelJuego+40;
 	   	}
 
 	   	public function ejemploJuego(){
