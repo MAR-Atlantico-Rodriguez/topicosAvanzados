@@ -43,5 +43,20 @@
 
             $this->assertEquals('ERROR, Mas de 10 juegos', $result);
         }
+
+        public function testContabilizarPuntajeJuego(){
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $this->juego->crearJuego(1,0);
+            $result = $this->juego->contabilizarPuntajeJuego();
+            $this->assertEquals(10,$result);
+        }
     }
 ?>

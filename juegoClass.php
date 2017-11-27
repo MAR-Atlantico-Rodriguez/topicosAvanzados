@@ -2,6 +2,7 @@
 include('frameClass.php');
 	class JuegoClass{
 		public $juego = [];
+		public $totalJuego = 0;
 
 		function __construct() {}
 
@@ -15,6 +16,13 @@ include('frameClass.php');
 	   		}else{
 	   			return 'ERROR, Mas de 10 juegos';
 	   		}
+	   	}
+
+	   	public function contabilizarPuntajeJuego(){
+	   		foreach ($this->juego as $k => $v) {
+	   			$totalJuego = $v->puntajeTotalFrame();
+	   		}
+	   		return $totalJuego;
 	   	}
 	 	
 	}
