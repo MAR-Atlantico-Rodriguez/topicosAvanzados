@@ -11,19 +11,24 @@
         }
 
         protected function tearDown(){
-           
+            $this->setFrame(0);  
         }
 
         public function setFrame($f){
             $this->frame = $f;
         }
 
+        /*
+            Cargo el array y compruebo que me retorne un true
+            Cargo el array en la posicion anterior y compruebo que me retorne un mensaje de error
+        */
         public function testCargarFrame(){
             $result = $this->frame->cargarFrame(0,0,10);
-            $this->assertEquals(true, $result);
+            $this->assertTrue($result);           
 
             $result = $this->frame->cargarFrame(0,0,10);
-            $this->assertEquals('Error, posiciones ocupadas', $result);
+            $this->assertEquals('ERROR', $result);
         }
+        
     }
 ?>

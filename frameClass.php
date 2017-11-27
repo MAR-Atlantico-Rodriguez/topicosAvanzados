@@ -1,20 +1,16 @@
 <?php
 	class FrameClass{
-
-		public $FrameArray = [];
-
-	 	public function suma($a,$b) {
-	 	  	return $a+$b;
-	 	}
+		public $FrameArray;
 
 	 	public function cargarFrame($posicionX, $posicionY, $intento){
-	 		if($this->FrameArray[$posicionX][$posicionY] != null){
+	 		if(is_null($this->FrameArray[$posicionX][$posicionY])){
 	 			$this->FrameArray[$posicionX][$posicionY] = $intento;
-	 			return true;
+	 			return TRUE;
 	 		}else{
-	 			return 'Error, posiciones ocupadas';
+	 			return 'ERROR';
 	 		}
 	 	}
 
 	}
+
 ?>
