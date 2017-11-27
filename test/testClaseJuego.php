@@ -104,5 +104,21 @@
             $result = $this->juego->contabilizarPlenosJuego();
             $this->assertEquals(300,$result);
         }
+
+        public function testEjemploJuego(){
+            $this->juego->crearJuego(2,3);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(4,5);
+            $this->juego->crearJuego(3,5);
+            $this->juego->crearJuego(5,4);
+            $this->juego->crearJuego(5,4);
+            $this->juego->crearJuego(6,3);
+            $this->juego->crearJuego(4,3);
+            $this->juego->crearJuego(10,0);
+            $this->juego->crearJuego(4,10);
+            $result = $this->juego->contabilizarPlenosJuego();
+            $this->assertEquals(128,$result);
+        }
     }
 ?>
