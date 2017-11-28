@@ -2,7 +2,6 @@
 include('frameClass.php');
 	class JuegoClass{
 		public $juego = [];
-		public $totalPleno = 0;
 
 		function __construct() {}
 
@@ -21,13 +20,14 @@ include('frameClass.php');
 
 	   	public function contabilizarPuntajeJuego(){
 	   		$totalJuego = 0;
-	   		foreach ($this->juego as $k => $v) {
+	   		foreach ($this->juego as $v) {
 	   			$totalJuego = $totalJuego + $v->puntajeTotalFrame();
 	   		}
 	   		return $totalJuego;
 	   	}
 
-	   	public function contabilizaPrimerPleno(){	   			
+	   	public function contabilizaPrimerPleno(){
+	   		$totalPleno = 0;
 	   		for ($i=0; $i <= count($this->juego); $i++) {
 	   			if($this->juego[$i]->puntajeTotalFrame() == 10){
 	   				$totalPleno = $this->juego[$i]->puntajeTotalFrame()
@@ -39,16 +39,15 @@ include('frameClass.php');
 	   	}
 
 	   	public function contabilizaVariosJuego(){
-	   		$plenos = [];
-	   		$a = 0;
-
+	   		$plenos = [];	   		
+	   		$totalPleno = 0;
 	   		foreach ($this->juego as $k => $v) {
-	   			if($v->puntajeTotalFrame() == 10 and $k < 8){
+	   			if($v->puntajeTotalFrame() == 10 && $k < 8){
 	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame()
 	   							+ $this->juego[$k+1]->puntajeTotalFrame()
 	   							+ $this->juego[$k+2]->puntajeTotalFrame();
 	   				array_push($plenos, $totalPleno);
-	   			}elseif ( $v->puntajeTotalFrame() == 10 and ($k >= 8 and $k < 9)) {
+	   			}elseif ( $v->puntajeTotalFrame() == 10 && ($k >= 8 && $k < 9)) {
 	   				$totalPleno = $this->juego[$k]->puntajeTotalFrame()
 	   							+ $this->juego[$k+1]->puntajeTotalFrame();
 	   				array_push($plenos, $totalPleno);
