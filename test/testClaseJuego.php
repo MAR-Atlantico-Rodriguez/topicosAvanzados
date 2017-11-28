@@ -1,8 +1,6 @@
 <?php
     use PHPUnit\Framework\TestCase;
-
     use \JuegoClass as Juego;
-
     class TestClaseFrame extends TestCase{
         public $juego;
 
@@ -11,7 +9,7 @@
         }
 
         protected function tearDown(){
-            $this->setJuego(0); 
+            $this->setJuego(0);
         }
 
         public function setJuego($f){
@@ -22,9 +20,7 @@
         Crea un juego
         */
         public function testCrearJuego(){
-            
             $result = $this->juego->crearJuego(2,3);
-            
             $this->assertEquals(true, $result);
         }
 
@@ -71,7 +67,7 @@
             $this->juego->crearJuego(1,0);
             $this->juego->crearJuego(1,0);
             $this->juego->crearJuego(1,0);
-            $result = $this->juego->contabilizaPrimerPleno();            
+            $result = $this->juego->contabilizaPrimerPleno();
             $this->assertEquals(12,$result);
         }
 

@@ -1,8 +1,8 @@
 <?php
 	class FrameClass{
 		public $FrameArray = [];
-
-	 	public function cargarFrame($intento){	 		
+		
+	 	public function cargarFrame($intento){
 	 		if($intento < 10){
 	 			array_push($this->FrameArray, $intento);
 	 			return true;
@@ -23,7 +23,7 @@
 
 	 	public function puntajeTotalFrame(){
 	 		$total = 0;
-	 		foreach ($this->FrameArray as $k => $v) {
+	 		foreach ($this->FrameArray as $v) {
 				$total = $total + $v;
 	 		}
 	 		return $total;
